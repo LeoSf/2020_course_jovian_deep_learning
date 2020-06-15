@@ -13,12 +13,17 @@ from torch.utils.data import DataLoader
 
 # -------------------------------------------
 # Hyper-parameters
+# batch_size = 128
+# learning_rate = 0.001
+
 batch_size = 128
-learning_rate = 0.001
+learning_rate = 0.002
 
 # Other constants
 input_size = 28 * 28
 num_classes = 10
+
+CUDA_ENABLE = True
 
 
 def accuracy(outputs, labels):
@@ -60,12 +65,18 @@ class MnistModel(nn.Module):
 
     def training_step(self, batch):
         images, labels = batch
+        if CUDA_ENABLE:
+            images = images.cuda()
+            labels = labels.cuda()
         out = self(images)  # Generate predictions
         loss = F.cross_entropy(out, labels)  # Calculate loss
         return loss
 
     def validation_step(self, batch):
         images, labels = batch
+        if CUDA_ENABLE:
+            images = images.cuda()
+            labels = labels.cuda()
         out = self(images)  # Generate predictions
         loss = F.cross_entropy(out, labels)  # Calculate loss
         acc = accuracy(out, labels)  # Calculate accuracy
@@ -84,9 +95,14 @@ class MnistModel(nn.Module):
 
 model = MnistModel()
 
+if CUDA_ENABLE:
+    model.cuda()
+
 
 def predict_image(img, model):
     xb = img.unsqueeze(0)
+    if CUDA_ENABLE:
+        xb = xb.cuda()
     yb = model(xb)
     _, preds  = torch.max(yb, dim=1)
     return preds[0].item()
