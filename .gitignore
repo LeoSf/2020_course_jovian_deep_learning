@@ -1,4 +1,5 @@
 class_material/*
 .vscode/*
-03-logistic-regression-v-1/data/*
+.idea/*
+datasets/*
 */.jovianrc
