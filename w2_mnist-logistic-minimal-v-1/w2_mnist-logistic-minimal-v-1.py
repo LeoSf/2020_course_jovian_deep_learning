@@ -1,3 +1,25 @@
+# !/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+Biong. Leandro D. Medus
+Ph.D Student GPDD - ETSE
+Universitat de València
+leandro.d.medus@uv.es
+
+12-06-2020
+
+Script Description:
+-------------------
+
+
+Version: 1.0
+------------
+
+TODO:
+    ---
+"""
+
 # Imports
 import os
 import torch
@@ -137,7 +159,7 @@ if __name__ == '__main__':
     rt_eval = evaluate(model, val_loader)
     print(rt_eval)
 
-    history = fit(5, 0.001, model, train_loader, val_loader)
+    history = fit(5000, 0.00001, model, train_loader, val_loader)
 
     accuracies = [r['val_acc'] for r in history]
     plt.plot(accuracies, '-x')
