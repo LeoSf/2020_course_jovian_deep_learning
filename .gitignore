@@ -12,3 +12,4 @@ projects/pytorch-cifar-master/.idea/*
 /w2_mnist-logistic-minimal-v-1/mnist-logistic.pth
 /w2_mnist-logistic-minimal-v-1/history-1.png
 *.zip
+*.pth
