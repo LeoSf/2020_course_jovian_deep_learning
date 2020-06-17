@@ -3,5 +3,12 @@ class_material/*
 .idea/*
 datasets/*
 */.jovianrc
-/w2_mnist-logistic-minimal-v-1/mnist-logistic.pth
+projects/data/*
+*/.idea/*
+projects/pytorch-cifar-master/.idea/*
+*.cpython-36.pyc
+*.pt
 /w2_housing-linear-minimal-v-1/housing-linear.pth
+/w2_mnist-logistic-minimal-v-1/mnist-logistic.pth
+/w2_mnist-logistic-minimal-v-1/history-1.png
+*.zip
