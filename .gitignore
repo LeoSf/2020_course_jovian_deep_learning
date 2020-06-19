@@ -14,3 +14,4 @@ projects/pytorch-cifar-master/.idea/*
 *.zip
 *.pth
 /final_competition/input/*
+/final_competition/notebooks/kaggle.json
