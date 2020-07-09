@@ -15,3 +15,5 @@ projects/pytorch-cifar-master/.idea/*
 *.pth
 /final_competition/input/*
 /final_competition/notebooks/kaggle.json
+/06_anime-dcgan-v-1/generated/generated-images-*.png
+*.mp4
